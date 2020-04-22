@@ -1,7 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<!-- Modal -->
+﻿<!-- Modal View -->
+<!-- Dependent upon /js/modal1.js -->
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -12,8 +10,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                Look, it's Modal 1!
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" id="name"/>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
