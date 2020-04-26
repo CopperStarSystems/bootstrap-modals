@@ -9,40 +9,17 @@
         <div class="row">
             <div class="col-12">
                 <a class="btn btn-primary" href="#modal1" data-toggle="modal" data-target="#modal1">Show Modal Window 1</a>
+                <a class="btn btn-primary" href="#modal2" data-toggle="modal" data-target="#modal2">Show Modal Window 2</a>
             </div>
         </div>
     </div>
 </div>
 
-@await Html.PartialAsync("_Modal1Partial");
+@await Html.PartialAsync("_Modal1Partial")
+@await Html.PartialAsync("_Modal2Partial")
 
 @section Scripts
 {
-    <script>
-        $(document).ready(function() {
-            $("#modal1").on("show.bs.modal", getData);
-            $("#update-person-button").on("click",
-                function (event) {
-                    var url = "https://jsonplaceholder.typicode.com/users";
-                    var data = $("#personForm").serialize();
-                    $.post(url,
-                        data,
-                        function (response) {
-                            console.log(response);
-                            $("#modal1").modal('toggle');
-                        });
-                });
-        });
-
-        function getData() {
-            var url = "https://jsonplaceholder.typicode.com/users";
-            $.get(url, mapData);
-        }
-
-        function mapData(result) {
-            var data = result[0];
-            $("#name").val(data.name);
-            $("#userName").val(data.username);
-        }
-    </script>
+    <script src="js/modal1.js"></script>
+    <script src="js/modal2.js"></script>
 }
